@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StarView</string>
+
+    <string name="rating_placeholder">Rating = %1$d</string>
+</resources>
