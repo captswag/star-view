@@ -19,12 +19,12 @@ public class StarView extends View {
     private static final int MINIMUM_WIDTH = 24;    // Minimum width of the view
     private static final int MINIMUM_HEIGHT = 24;   // Minimum height of the view
 
-    private static final int LOWER_BOUND = 33;      // Below lower bound is the lowest rating
-    private static final int UPPER_BOUND = 66;      // Above upper bound is the highest rating
+    private static final double LOWER_BOUND = 3.3;  // Below lower bound is the lowest rating
+    private static final double UPPER_BOUND = 6.6;  // Above upper bound is the highest rating
 
-    private Drawable mDrawable; // Drawable used to draw the star.
-    private int mViewSize;      // View size which is min of width or height.
-    private int mRating = 0;        // Rating bound is from 0 - 100, default value is 0.
+    private Drawable mDrawable;                     // Drawable used to draw the star.
+    private int mViewSize;                          // View size which is min of width or height.
+    private double mRating = 0.0;                   // Rating bound is from 0 - 10, default value is 0.0.
 
     public StarView(Context context) {
         super(context);
@@ -49,7 +49,7 @@ public class StarView extends View {
          * Get the value using getInteger() of TypedArray a.
          */
         if (attrs != null) {
-            mRating = a.getInteger(R.styleable.StarView_rating, mRating);
+            mRating = a.getFloat(R.styleable.StarView_rating, 0.0f);
         }
 
         a.recycle();
@@ -89,11 +89,11 @@ public class StarView extends View {
         mDrawable.draw(canvas);
     }
 
-    public int getRating() {
+    public double getRating() {
         return this.mRating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.mRating = rating;
         this.mDrawable = selectDrawableAccordingToRating(this.mRating);
         invalidate();
@@ -105,7 +105,7 @@ public class StarView extends View {
      * @param rating Rating received from the user.
      * @return Drawable corresponding to the rating.
      */
-    private Drawable selectDrawableAccordingToRating(int rating) {
+    private Drawable selectDrawableAccordingToRating(double rating) {
         Drawable drawable;
         if (rating < LOWER_BOUND) {
             drawable = ContextCompat.getDrawable(getContext(), R.drawable.ic_star_border_yellow_24dp);

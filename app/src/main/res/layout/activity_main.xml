@@ -10,13 +10,13 @@
         android:id="@+id/star_view"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:rating="34" />
+        app:rating="6" />
 
     <TextView
         android:id="@+id/text_rating"
-        android:text="Rating = 34"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Rating = 6" />
 
     <Button
         android:id="@+id/button_rating"

@@ -27,10 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeRating(View view) {
         mRandomNumberGenerator = new Random();
-        setRating(mRandomNumberGenerator.nextInt(100));
+        int lowerLimit = 0;
+        int upperLimit = 10;
+        setRating(lowerLimit + (mRandomNumberGenerator.nextDouble() * (lowerLimit + (upperLimit - lowerLimit))));
     }
 
-    private void setRating(int rating) {
+    private void setRating(double rating) {
         mStarView.setRating(rating);
         mTextRating.setText(getString(R.string.rating_placeholder, rating));
     }

@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="StarView">
 
-        <attr name="rating" format="integer" />
+        <attr name="rating" format="float" />
 
     </declare-styleable>
 </resources>
