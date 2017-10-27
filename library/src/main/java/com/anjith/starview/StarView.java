@@ -23,7 +23,7 @@ public class StarView extends View {
 
     private static final int MINIMUM_WIDTH = 80;
     private static final int MINIMUM_HEIGHT = 80;
-    private static final float STAR_STROKE_SCALE_FACTOR = 0.04f;
+    private static final float STAR_STROKE_SCALE_FACTOR = 0.05f;
 
     private int mColor;
     private int mRating;                // 0 - 10, where 0 means no fill and 10 means fully filled
